@@ -5,12 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Controler))]
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float _speedWalk;
     [SerializeField] private float _forseJump;
     [SerializeField] private Animator _animator;
+
+    private const string IsWalk = "Walk";
     private Controler _controler;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -49,7 +52,7 @@ public class Movement : MonoBehaviour
     private void Walk(Vector2 direction)
     {
         _rigidbody.velocity = new Vector2(direction.x * _speedWalk, _rigidbody.velocity.y);
-        _animator.SetFloat("Walk",direction.magnitude);
+        _animator.SetFloat(IsWalk, direction.magnitude);
     }
 
     private void Flip()
