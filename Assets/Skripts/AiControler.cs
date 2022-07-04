@@ -5,9 +5,10 @@ using UnityEngine;
 public class AiControler : Controler
 {
     [SerializeField] private Transform[] _points;
+
     private int _currentPointIndex = 0;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (IsReachPoint(_points[_currentPointIndex]))
         {
