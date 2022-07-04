@@ -9,12 +9,12 @@ public class Controler : MonoBehaviour
     public event MoveInput Moved;
     public event JumpInput Jumped;
 
-    protected void InvokeEventMove(Vector2 direction)
+    protected void InvokeEventControlerMove(Vector2 direction)
     {
         Moved?.Invoke(direction);
     }
 
-    protected void InvokeEventJump()
+    protected void InvokeEventControlerJump()
     {
         Jumped?.Invoke();
     }

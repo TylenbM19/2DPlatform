@@ -6,18 +6,8 @@ public class PlayerControler : Controler
 {
     private void Update()
     {
-        InvokeEventMove(new Vector2(ReturnButtonClickOnMovement(), 0f));
-            if (ReturnButtonClickOnJump())
-                InvokeEventJump();
-    }
-
-    private float ReturnButtonClickOnMovement()
-    {
-        return Input.GetAxis("Horizontal");
-    }
-
-    private bool ReturnButtonClickOnJump()
-    {
-        return Input.GetKeyDown(KeyCode.W);
+        InvokeEventMove(new Vector2(Input.GetAxis("Horizontal"), 0f));
+        if (Input.GetKeyDown(KeyCode.W))
+            InvokeEventJump();
     }
 }

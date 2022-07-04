@@ -16,7 +16,7 @@ public class AiControler : Controler
         }
         
         Vector2 direction = DirectionToPoint(_points[_currentPointIndex]);
-        InvokeEventMove(direction);
+        InvokeEventControlerMove(direction);
     }
 
     private bool IsReachPoint(Transform point)
