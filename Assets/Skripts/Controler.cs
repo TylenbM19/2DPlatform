@@ -6,16 +6,16 @@ public class Controler : MonoBehaviour
 {
     public delegate void MoveInput(Vector2 direction);
     public delegate void JumpInput();
-    public event MoveInput OnMove;
-    public event JumpInput OnJump;
+    public event MoveInput Moved;
+    public event JumpInput Jumped;
 
-    protected void MoveEvent(Vector2 direction)
+    protected void InvokeEventMove(Vector2 direction)
     {
-        OnMove?.Invoke(direction);
+        Moved?.Invoke(direction);
     }
 
-    protected void JumpEvent()
+    protected void InvokeEventJump()
     {
-        OnJump?.Invoke();
+        Jumped?.Invoke();
     }
 }

@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
     {
         Flip();
     }
+
     private void FixedUpdate()
     {
         ChekingGround();
@@ -46,8 +47,8 @@ public class Movement : MonoBehaviour
     {
         if (_controler != null)
         {
-            _controler.OnMove += Walk;
-            _controler.OnJump += Jump;
+            _controler.Moved += Walk;
+            _controler.Jumped += Jump;
         }
     }
 
@@ -55,8 +56,8 @@ public class Movement : MonoBehaviour
     {
         if (_controler != null)
         {
-            _controler.OnJump -= Jump;
-            _controler.OnMove -= Walk;
+            _controler.Jumped -= Jump;
+            _controler.Moved -= Walk;
         }
     }
 

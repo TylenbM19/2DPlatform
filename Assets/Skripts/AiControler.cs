@@ -15,8 +15,8 @@ public class AiControler : Controler
             SelectNextPointers();
         }
         
-        Vector2 Direction = DirectionToPoint(_points[_currentPointIndex]);
-        MoveEvent(Direction);
+        Vector2 direction = DirectionToPoint(_points[_currentPointIndex]);
+        InvokeEventMove(direction);
     }
 
     private bool IsReachPoint(Transform point)
